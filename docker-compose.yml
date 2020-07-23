@@ -1,0 +1,41 @@
+version: '3.4'
+services:
+  db:
+    image: mysql:5.7.31
+    command: mysqld --default-authentication-plugin=mysql_native_password
+    restart: always
+    build:
+        context: .
+        dockerfile: Dockerfile
+    environment:
+      TZ: America/Sao_Paulo
+      MYSQL_ROOT_PASSWORD: dockerabc
+      MYSQL_USER: docker  
+      MYSQL_PASSWORD: dockerabc
+      MYSQL_DATABASE: db_dasa
+    ports:
+      - "3308:3306"
+    networks:
+      - n1-network
+  java-rest-api:
+    image: java-rest-api
+    restart: always
+    build: .
+    working_dir: /java-rest-api
+    environment:
+      TZ: America/Sao_Paulo
+      SPRING_BOOT_ENVIRONMENT: Production
+    volumes:
+      - ./java-rest-api:/java-rest-api
+      - ~/.m2:/root/.m2
+    ports:
+      - "8080:8080"
+    links:
+      - db
+    depends_on:
+      - db
+    networks:
+      - n1-network
+networks:
+    n1-network:
+        driver: bridge

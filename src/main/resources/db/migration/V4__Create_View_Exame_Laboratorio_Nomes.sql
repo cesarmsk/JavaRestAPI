@@ -1,0 +1,2 @@
+create view exame_laboratorio_nomes as
+select `c`.`id` AS `id`,`a`.`id` AS `id_exame`,`a`.`nome` AS `nome_exame`,`a`.`tipo` AS `tipo`,`a`.`status` AS `status_exame`,`b`.`id` AS `id_laboratorio`,`b`.`nome` AS `nome_laboratorio`,`b`.`endereco` AS `endereco`,`b`.`status` AS `status_laboratorio` from ((`exame` `a` join `exame_laboratorio` `c` on((`a`.`id` = `c`.`id_exame`))) join `laboratorio` `b` on((`b`.`id` = `c`.`id_laboratorio`)))
