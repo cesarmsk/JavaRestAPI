@@ -1,7 +1,7 @@
 # JavaRestAPI
 Java Rest API
 
-Tecnologias/Frameworks:
+Tecnologies/Frameworks:
 - java version "11.0.8" 2020-07-14 LTS
 - Apache Maven 3.6.3
 - mysql 5.7.31
@@ -16,5 +16,9 @@ Tecnologias/Frameworks:
 
 Setup:
 - git clone: https://github.com/cesarmsk/JavaRestAPI.git
-- docker-compose up -d --build
-- mvn clean package spring-boot:run
+- Run docker: docker-compose up -d --build
+- Environment Builds: mvn clean package spring-boot:run 
+
+API Documentation:
+- java-rest-api\src\main\java\br\com\cesarmsk\Startup.java (Run as Java Application)
+- http://localhost:8080/swagger-ui.html#
