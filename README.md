@@ -22,3 +22,7 @@ Setup:
 API Documentation:
 - java-rest-api\src\main\java\br\com\cesarmsk\Startup.java (Run as Java Application)
 - http://localhost:8080/swagger-ui.html#
+
+Docker Hub Images:
+- cesarmsk\mysql
+- cesarmsk\java-rest-api
