@@ -11,6 +11,7 @@ Tecnologies/Frameworks:
 - Springboot
 - Flyway
 - Docker
+- Docker Compose
 - AWS
 - Unit Test
 
